@@ -1,5 +1,5 @@
-import ThemeProvider from "@/components/theme-provider";
 import "./globals.css";
+import ThemeProvider from "@/components/theme-provider";
 import { Outfit, Ovo } from "next/font/google";
 
 const outfit = Outfit({
@@ -20,7 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${ovo.className} antialiased`}>
+      <body
+        className={`${outfit.className} ${ovo.className} antialiased`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
