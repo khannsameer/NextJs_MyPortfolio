@@ -1,3 +1,4 @@
+import ThemeProvider from "@/components/theme-provider";
 import "./globals.css";
 import { Outfit, Ovo } from "next/font/google";
 
@@ -20,7 +21,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} ${ovo.className} antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -2,6 +2,8 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ModeToggle } from "./ModeToggle";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
@@ -51,14 +53,15 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="flex items-center gap-4">
-          <button>
-            <Image
+          <Button>
+            {/* <Image
               src={assets.moon_icon}
               priority={true}
               alt=""
               className="w-6 cursor-pointer"
-            />
-          </button>
+            /> */}
+            <ModeToggle />
+          </Button>
           <Link
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-ovo"
