@@ -18,14 +18,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
-        <div
-          className="
-    w-full h-[400px] 
-    bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 
-    dark:bg-gradient-to-r dark:from-gray-900 dark:via-purple-900 dark:to-black
-    blur-3xl opacity-70
-  "
-        ></div>
+        <div className="w-full h-[400px] bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 dark:bg-gradient-to-r dark:from-gray-900 dark:via-purple-900 dark:to-black blur-3xl opacity-70"></div>
       </div>
 
       <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
