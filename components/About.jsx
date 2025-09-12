@@ -48,15 +48,9 @@ const About = () => {
             {toolsData.map((tool, index) => (
               <li
                 key={index}
-                className="flex items-center justify-center 
-             w-12 sm:w-14 aspect-square 
-             border border-gray-400 rounded-lg 
-             bg-white dark:bg-gray-900
-             cursor-pointer transition duration-300 transform
-             hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl
-             hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg bg-white dark:bg-gray-900 cursor-pointer transition duration-300 transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-800"
               >
-                <Image src={tool} alt="Tools" className="w-5 sm:w-7" />
+                <Image src={tool} alt="Tools" className="w-20 sm:w-10" />
               </li>
             ))}
           </ul>
