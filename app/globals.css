@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* custom dark mode handling */
 @custom-variant dark (&:is(.dark *));
 
+/* Theme variables */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -46,20 +48,7 @@
   --color-custom: var(--custom-text);
 }
 
-/* @layer utilities {
-  .hover-light {
-    background-color: #fcf4ff;
-  }
-
-  .hover-dark {
-    background-color: #2a004a;
-  }
-
-  .dark-theme {
-    background-color: #11001f;
-  }
-} */
-
+/* Light theme (default) */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -96,6 +85,7 @@
   --custom-text: black;
 }
 
+/* Dark theme overrides */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -131,11 +121,48 @@
   --custom-text: White;
 }
 
+/* Base styles */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hover-light:hover {
+    background-color: #f8fafc;
+  }
+
+  .hover-dark:hover {
+    background-color: #2a004a;
+  }
+
+  .dark-theme {
+    background-color: #11001f;
+  }
+
+  .shadow-light {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .shadow-dark {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Card lift shadow */
+  .shadow-lift {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .shadow-lift:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+  }
+
+  /* Dark mode lifted shadow */
+  .dark .shadow-lift:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 }
