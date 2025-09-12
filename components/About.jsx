@@ -1,4 +1,4 @@
-import { assets, infoList } from "@/assets/assets";
+import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
@@ -27,31 +27,36 @@ const About = () => {
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
                 key={index}
-                className="group border border-gray-300 dark:border-gray-700 
-             rounded-xl p-6 cursor-pointer 
-             transition duration-300 transform
-             hover:-translate-y-2 
-             hover:shadow-xl dark:hover:shadow-2xl
+                className="group border border-gray-300 dark:border-gray-700 rounded-xl p-6 cursor-pointer transition duration-300 transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl
              hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <Image src={icon} alt={title} className="w-7 mt-3" />
-
                 {/* Title */}
-                <h3
-                  className="my-4 font-semibold 
-                 text-gray-800 dark:text-gray-200 
-                 group-hover:text-gray-900 dark:group-hover:text-white"
-                >
+                <h3 className="my-4 font-semibold text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">
                   {title}
                 </h3>
 
                 {/* Description */}
-                <p
-                  className="text-gray-600 dark:text-gray-400 text-sm 
-                group-hover:text-gray-700 dark:group-hover:text-gray-300"
-                >
+                <p className="text-gray-600 dark:text-gray-400 text-sm group-hover:text-gray-700 dark:group-hover:text-gray-300">
                   {description}
                 </p>
+              </li>
+            ))}
+          </ul>
+          <h4 className="my-6 font-ovo">Tools I use</h4>
+          <ul className="flex flex-wrap justify-center items-center gap-3 sm:gap-5">
+            {toolsData.map((tool, index) => (
+              <li
+                key={index}
+                className="flex items-center justify-center 
+             w-12 sm:w-14 aspect-square 
+             border border-gray-400 rounded-lg 
+             bg-white dark:bg-gray-900
+             cursor-pointer transition duration-300 transform
+             hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl
+             hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <Image src={tool} alt="Tools" className="w-5 sm:w-7" />
               </li>
             ))}
           </ul>

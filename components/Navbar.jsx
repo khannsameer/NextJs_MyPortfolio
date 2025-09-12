@@ -1,10 +1,11 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ModeToggle } from "./ModeToggle";
 
 const Navbar = () => {
+  const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
 
   const openMenu = () => {
@@ -15,13 +16,27 @@ const Navbar = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 40) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <div className="w-full h-[400px] bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 dark:bg-gradient-to-r dark:from-gray-900 dark:via-purple-900 dark:to-black blur-3xl opacity-70"></div>
       </div>
 
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
+          isScroll ? "bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
+        }`}
+      >
         <Link href="#top">
           <Image
             src={assets.logo}
@@ -30,7 +45,13 @@ const Navbar = () => {
             alt=""
           />
         </Link>
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white dark:bg-gray-900 shadow-sm bg-opacity-50 dark:bg-opacity-70">
+        <ul
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
+            isScroll
+              ? ""
+              : "bg-white dark:bg-gray-900 shadow-sm bg-opacity-50 dark:bg-opacity-70"
+          } `}
+        >
           <li>
             <Link
               href="#top"

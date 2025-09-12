@@ -9,7 +9,7 @@ import vscode from "./vscode.png";
 import firebase from "./firebase.png";
 import figma from "./figma.png";
 import git from "./git.png";
-import mongodb from "./mongodb.png";
+// import mongodb from "./mongodb.png";
 import right_arrow_white from "./right-arrow-white.png";
 import logo from "./logo.png";
 import logo_dark from "./logo_dark.png";
@@ -35,8 +35,33 @@ import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import prof from "./prof.png";
+import github from "./github.png";
+import css from "./css.png";
+import express_js from "./express-js.png";
+import html from "./html.png";
+import javascript from "./javascript.png";
+import mysql from "./mysql.png";
+import netlify from "./netlify.png";
+import node_js from "./node-js.png";
+// import nodejs from "./nodejs.png";
+import react_js from "./react-js.png";
+import redux from "./redux.png";
+import tailwindcss from "./tailwindcss.png";
+import mongo_db from "./mongo-db.png";
 
 export const assets = {
+  mongo_db,
+  github,
+  express_js,
+  css,
+  html,
+  javascript,
+  mysql,
+  netlify,
+  node_js,
+  react_js,
+  redux,
+  tailwindcss,
   prof,
   user_image,
   code_icon,
@@ -49,7 +74,7 @@ export const assets = {
   firebase,
   figma,
   git,
-  mongodb,
+  // mongodb,
   right_arrow_white,
   logo,
   logo_dark,
@@ -153,7 +178,19 @@ export const infoList = [
 export const toolsData = [
   assets.vscode,
   assets.firebase,
-  assets.mongodb,
+  // assets.mongodb,
   assets.figma,
   assets.git,
+  assets.css,
+  assets.express_js,
+  assets.html,
+  assets.github,
+  assets.javascript,
+  assets.mysql,
+  assets.netlify,
+  assets.node_js,
+  assets.react_js,
+  assets.redux,
+  assets.tailwindcss,
+  assets.mongo_db,
 ];
