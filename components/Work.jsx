@@ -77,7 +77,7 @@ const Work = () => {
         href=""
         className="w-max flex items-center justify-center gap-2 rounded-full py-3 px-10 mx-auto my-20 text-gray-700 border border-gray-400 transition-all duration-300 ease-in-out hover:bg-gray-800 hover:text-white hover:shadow-lg hover:scale-105 dark:text-gray-200 dark:border-gray-500 dark:hover:bg-white dark:hover:text-black"
       >
-        Show more{" "}
+        Show more
         <Image
           src={assets.right_arrow_bold}
           alt="Right arrow"
