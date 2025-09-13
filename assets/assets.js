@@ -9,7 +9,6 @@ import vscode from "./vscode.png";
 import firebase from "./firebase.png";
 import figma from "./figma.png";
 import git from "./git.png";
-// import mongodb from "./mongodb.png";
 import right_arrow_white from "./right-arrow-white.png";
 import logo from "./logo.png";
 import logo_dark from "./logo_dark.png";
@@ -26,10 +25,6 @@ import menu_black from "./menu-black.png";
 import menu_white from "./menu-white.png";
 import close_black from "./close-black.png";
 import close_white from "./close-white.png";
-import web_icon from "./web-icon.png";
-import mobile_icon from "./mobile-icon.png";
-import ui_icon from "./ui-icon.png";
-import graphics_icon from "./graphics-icon.png";
 import right_arrow from "./right-arrow.png";
 import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
@@ -43,13 +38,20 @@ import javascript from "./javascript.png";
 import mysql from "./mysql.png";
 import netlify from "./netlify.png";
 import node_js from "./node-js.png";
-// import nodejs from "./nodejs.png";
 import react_js from "./react-js.png";
 import redux from "./redux.png";
 import tailwindcss from "./tailwindcss.png";
 import mongo_db from "./mongo-db.png";
+import android from "./android.png";
+import backend from "./backend.png";
+import ui from "./ui.png";
+import ux from "./ux.png";
 
 export const assets = {
+  android,
+  backend,
+  ui,
+  ux,
   mongo_db,
   github,
   express_js,
@@ -74,7 +76,6 @@ export const assets = {
   firebase,
   figma,
   git,
-  // mongodb,
   right_arrow_white,
   logo,
   logo_dark,
@@ -91,10 +92,6 @@ export const assets = {
   menu_white,
   close_black,
   close_white,
-  web_icon,
-  mobile_icon,
-  ui_icon,
-  graphics_icon,
   right_arrow,
   send_icon,
   right_arrow_bold,
@@ -126,29 +123,31 @@ export const workData = [
 
 export const serviceData = [
   {
-    icon: assets.web_icon,
-    title: "Web design",
-    description: "Web development is the process of building, programming...",
-    link: "",
-  },
-  {
-    icon: assets.mobile_icon,
-    title: "Mobile app",
+    icon: assets.ux,
+    title: "Frontend Development",
     description:
-      "Mobile app development involves creating software for mobile devices...",
+      "Crafting responsive, user-friendly, and visually appealing interfaces using modern web technologies.",
     link: "",
   },
   {
-    icon: assets.ui_icon,
-    title: "UI/UX design",
+    icon: assets.android,
+    title: "Mobile Development",
     description:
-      "UI/UX design focuses on creating a seamless user experience...",
+      "Building high-performance, user-friendly mobile apps with seamless UI and smooth functionality for Android.",
     link: "",
   },
   {
-    icon: assets.graphics_icon,
-    title: "Graphics design",
-    description: "Creative design solutions to enhance visual communication...",
+    icon: assets.ui,
+    title: "UI/UX Design",
+    description:
+      "Designing intuitive and visually appealing interfaces that ensure seamless user experiences across web and mobile platforms.",
+    link: "",
+  },
+  {
+    icon: assets.backend,
+    title: "Backend Development",
+    description:
+      "Robust, secure, and scalable server-side solutions with APIs and database integration.",
     link: "",
   },
 ];
@@ -178,7 +177,6 @@ export const infoList = [
 export const toolsData = [
   assets.vscode,
   assets.firebase,
-  // assets.mongodb,
   assets.figma,
   assets.git,
   assets.css,
