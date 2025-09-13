@@ -165,4 +165,9 @@
   .dark .shadow-lift:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
+
+  /* custom col for grid */
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
