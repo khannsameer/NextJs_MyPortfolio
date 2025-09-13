@@ -46,8 +46,14 @@ import android from "./android.png";
 import backend from "./backend.png";
 import ui from "./ui.png";
 import ux from "./ux.png";
+import carPolling from "./carPolling.jpg";
+import pokemonCards from "./pokemonCards.jpg";
+import tastyNest from "./tastyNest.jpg";
 
 export const assets = {
+  carPolling,
+  pokemonCards,
+  tastyNest,
   android,
   backend,
   ui,
@@ -100,24 +106,63 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Frontend project",
-    description: "Web Design",
-    bgImage: "/work-1.png",
+    name: "GoFLow_A-Carpool_App",
+    description:
+      "GoFlow is a smart ride-sharing Android app with ride search, booking, OTP verification, wallet, payment integration, and referral rewards for an eco-friendly and affordable travel experience.",
+    tags: [
+      {
+        name: "Java",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Firebase",
+        color: "green-text-gradient",
+      },
+    ],
+    image: carPolling,
+    source_code_link: "https://github.com/khannsameer/GoFLow_A-Carpool_App.git",
   },
   {
-    title: "Geo based app",
-    description: "Mobile App",
-    bgImage: "/work-2.png",
+    name: "Recipe App",
+    description:
+      "A modern Recipe App built with React.js and Tailwind CSS. Fetches real-time recipes using the Edamam API and displays them in a clean, responsive UI.",
+    tags: [
+      {
+        name: "ReactJs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "EdamamAPI",
+        color: "green-text-gradient",
+      },
+      {
+        name: "TailwindCss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tastyNest,
+    source_code_link: "https://github.com/khannsameer/Recipe_App",
   },
   {
-    title: "Photography site",
-    description: "Web Design",
-    bgImage: "/work-3.png",
-  },
-  {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    name: "Pokemon Cards",
+    description:
+      "A beautifully styled Pokédex built using React, Tailwind CSS, and Flowbite React. This project recreates a playful Pokémon-themed UI with custom fonts, and responsive design.",
+    tags: [
+      {
+        name: "ReactJs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Pokemon API",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: pokemonCards,
+    source_code_link: "https://github.com/khannsameer/Pokemon_Cards",
   },
 ];
 
