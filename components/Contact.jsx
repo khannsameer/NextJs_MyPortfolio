@@ -37,7 +37,7 @@ const Contact = () => {
     <div id="contact" className="relative w-full px-[12%] py-16 scroll-mt-20">
       {/* Gradient background blob */}
       <div className="absolute inset-0 -z-10">
-        <div className="w-full h-[400px] bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 dark:bg-gradient-to-r dark:from-gray-900 dark:via-purple-900 dark:to-black blur-3xl opacity-70"></div>
+        <div className="w-full h-[400px] bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 dark:bg-gradient-to-r dark:from-gray-900 dark:via-purple-950 dark:to-black blur-3xl opacity-70"></div>
       </div>
 
       {/* Content */}

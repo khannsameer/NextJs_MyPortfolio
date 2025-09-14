@@ -16,7 +16,7 @@ const Header = () => {
       <h1 className="text-3xl sm:text-6xl lg:text-[66px] font-ovo">
         Full Stack Developer
       </h1>
-      <p className="max-w-2xl mx-auto font-ovo">
+      <p className="max-w-2xl mx-auto font-ovo text-gray-600 dark:text-gray-400">
         I’m a passionate Full Stack Developer skilled in creating responsive,
         user-friendly web applications. I work with modern frontend frameworks
         like React.js and Next.js, and build robust backends using Node.js,

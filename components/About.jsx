@@ -14,7 +14,7 @@ const About = () => {
         </div>
 
         <div className="flex-1">
-          <p className="max-w-3xl mb-10 font-ovo">
+          <p className="max-w-3xl mb-10 font-ovo text-gray-600 dark:text-gray-400">
             I’m Sameer Khan, a passionate Full Stack Developer who enjoys
             building modern, responsive, and scalable web applications. I
             specialize in frontend technologies like React.js and Next.js, and
