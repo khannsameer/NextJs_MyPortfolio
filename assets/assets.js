@@ -49,8 +49,12 @@ import ux from "./ux.png";
 import carPolling from "./carPolling.jpg";
 import pokemonCards from "./pokemonCards.jpg";
 import tastyNest from "./tastyNest.jpg";
+import sameer from "./sameer.png";
+import sameer_light from "./sameer_light.png";
 
 export const assets = {
+  sameer,
+  sameer_light,
   carPolling,
   pokemonCards,
   tastyNest,

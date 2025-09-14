@@ -9,7 +9,18 @@ const Footer = () => {
     <div className="mt-20">
       {/* Logo & Email */}
       <div className="text-center">
-        <Image src={assets.logo} alt="Logo" className="w-36 mx-auto mb-2" />
+        {/* Light mode logo (black text) */}
+        <Image
+          src={assets.sameer} // black version
+          alt="Logo"
+          className="w-36 mx-auto mb-2 dark:hidden"
+        />
+        {/* Dark mode logo (white text) */}
+        <Image
+          src={assets.sameer_light} // white version
+          alt="Logo"
+          className="w-36 mx-auto mb-2 hidden dark:block"
+        />
 
         <div className="w-max flex items-center gap-2 mx-auto">
           <Image src={assets.mail_icon} alt="Mail Icon" className="w-6" />

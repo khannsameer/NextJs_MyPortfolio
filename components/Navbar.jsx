@@ -37,14 +37,24 @@ const Navbar = () => {
           isScroll ? "bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
         }`}
       >
-        <Link href="#top">
+        <Link href="#top" className="mr-14 cursor-pointer">
+          {/* Light mode logo (black text) */}
           <Image
-            src={assets.logo}
+            src={assets.sameer} // black version
             priority={true}
-            className="w-28 cursor-pointer mr-14"
-            alt=""
+            className="w-28 dark:hidden"
+            alt="Logo"
+          />
+
+          {/* Dark mode logo (white text) */}
+          <Image
+            src={assets.sameer_light} // white version
+            priority={true}
+            className="w-28 hidden dark:block"
+            alt="Logo"
           />
         </Link>
+
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
             isScroll
