@@ -21,14 +21,19 @@ const headingVariant = {
   },
 };
 
-const inputVariant = {
-  hidden: { opacity: 0, scale: 0.8, rotate: -2 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: { type: "spring", stiffness: 100 },
-  },
+const inputVariantLeft = {
+  hidden: { opacity: 0, x: -50 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
+};
+
+const inputVariantRight = {
+  hidden: { opacity: 0, x: 50 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
+};
+
+const textareaVariant = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
 };
 
 const buttonVariant = {
@@ -63,19 +68,24 @@ const Contact = () => {
     const formData = new FormData(event.target);
     formData.append("access_key", "49cd52e8-baa0-4740-9084-50c827b6de9d");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully 🎉");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult("" + data.message);
+      if (data.success) {
+        setResult("Form Submitted Successfully 🎉");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult("" + data.message);
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setResult("Something went wrong.");
     }
 
     setTimeout(() => setShowToast(false), 3000);
@@ -88,7 +98,7 @@ const Contact = () => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       {/* Gradient background blob */}
       <div className="absolute inset-0 -z-10">
@@ -119,43 +129,34 @@ const Contact = () => {
       </motion.p>
 
       {/* Form */}
-      <motion.form
-        onSubmit={onSubmit}
-        variants={container}
-        className="max-w-2xl mx-auto"
-      >
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-2 gap-6 mt-10 mb-8"
-        >
+      <motion.form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 mt-10 mb-8">
           <motion.input
-            variants={inputVariant}
+            variants={inputVariantLeft}
             type="text"
             placeholder="Enter your name"
             required
             name="name"
-            className="flex-1 p-3 outline-none rounded-md bg-white text-gray-900 placeholder-gray-500
-                 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-sm"
+            className="flex-1 p-3 outline-none rounded-md bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-sm"
           />
           <motion.input
-            variants={inputVariant}
+            variants={inputVariantRight}
             type="email"
             placeholder="Enter your email"
             required
             name="email"
-            className="flex-1 p-3 outline-none rounded-md bg-white text-gray-900 placeholder-gray-500
-                 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-sm"
+            className="flex-1 p-3 outline-none rounded-md bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-sm"
           />
-        </motion.div>
+        </div>
 
         <motion.textarea
-          variants={inputVariant}
+          variants={textareaVariant}
           rows="6"
           placeholder="Enter your message"
           required
           name="message"
           className="w-full p-4 outline-none rounded-md bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-sm mb-6"
-        ></motion.textarea>
+        />
 
         <motion.button
           variants={buttonVariant}
@@ -178,10 +179,9 @@ const Contact = () => {
           variants={toastVariant}
           initial="hidden"
           animate="show"
-          className={`fixed bottom-5 right-5 px-6 py-3 rounded-lg shadow-lg text-white font-medium 
-            ${
-              result.includes("Successfully") ? "bg-green-600" : "bg-blue-600"
-            }`}
+          className={`fixed bottom-5 right-5 px-6 py-3 rounded-lg shadow-lg text-white font-medium ${
+            result.includes("Successfully") ? "bg-green-600" : "bg-blue-600"
+          }`}
         >
           {result}
         </motion.div>
