@@ -4,31 +4,37 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
-// Outer container: handles stagger
+// Container for stagger
 const container = {
-  hidden: { opacity: 0 },
+  hidden: {},
+  show: { transition: { staggerChildren: 0.25 } },
+};
+
+// Headings fade from left
+const headingVariant = {
+  hidden: { opacity: 0, x: -50 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
+};
+
+// Paragraph slides up with bounce
+const paragraphVariant = {
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.25 },
+    y: 0,
+    transition: { type: "spring", stiffness: 120, damping: 14 },
   },
 };
 
-// Headings / paragraph fade-up
-const textItem = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-// Cards: start far left → slide to center
-const cardItem = {
-  hidden: { opacity: 0, x: -120 }, // start well to the left
+// Cards rotate & scale in from bottom
+const cardVariant = {
+  hidden: { opacity: 0, y: 40, rotate: -5, scale: 0.85 },
   show: {
     opacity: 1,
-    x: 0, // land centered
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 140, damping: 15 },
   },
 };
 
@@ -39,23 +45,26 @@ const Services = () => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }} // animate every time visible
+      viewport={{ once: false, amount: 0.3 }}
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
       {/* Section Headings */}
       <motion.h4
-        variants={textItem}
+        variants={headingVariant}
         className="text-center mb-2 text-xl font-ovo"
       >
         What I offer
       </motion.h4>
 
-      <motion.h2 variants={textItem} className="text-center text-5xl font-ovo">
+      <motion.h2
+        variants={headingVariant}
+        className="text-center text-5xl font-ovo"
+      >
         My Services
       </motion.h2>
 
       <motion.p
-        variants={textItem}
+        variants={paragraphVariant}
         className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4 mb-12 font-ovo"
       >
         I specialize in building modern, responsive, and scalable web
@@ -68,9 +77,9 @@ const Services = () => {
         {serviceData.map(({ icon, title, description, link }, index) => (
           <motion.li
             key={index}
-            variants={cardItem}
-            whileHover={{ scale: 1.03, y: -5 }}
-            whileTap={{ scale: 0.97 }}
+            variants={cardVariant}
+            whileHover={{ scale: 1.05, y: -10, rotate: 2 }}
+            whileTap={{ scale: 0.95, rotate: -2 }}
             className="group border border-gray-400 dark:border-gray-700 rounded-lg px-8 py-12 cursor-pointer
             transition-all duration-300 ease-out hover:shadow-xl dark:hover:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
           >

@@ -6,26 +6,31 @@ import { motion } from "framer-motion";
 
 // Parent container: handles staggered animations
 const container = {
-  hidden: { opacity: 0 },
+  hidden: {},
+  show: { transition: { staggerChildren: 0.25 } },
+};
+
+// Headings / paragraph: slide from top + rotate
+const textItem = {
+  hidden: { opacity: 0, y: -50, rotate: -2 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.25 },
+    y: 0,
+    rotate: 0,
+    transition: { type: "spring", stiffness: 100, damping: 12 },
   },
 };
 
-// Headings / text fade-up
-const textItem = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-// Project cards: slide from left to center
+// Project cards: diagonal pop-in with rotation & scale
 const cardItem = {
-  hidden: { opacity: 0, x: -120 },
+  hidden: { opacity: 0, x: 50, y: 50, rotate: -5, scale: 0.85 },
   show: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 140, damping: 14 },
   },
 };
 
@@ -36,7 +41,7 @@ const Work = () => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }} // 🔑 animate every time section is visible
+      viewport={{ once: false, amount: 0.3 }}
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
       {/* Section Headings */}
@@ -72,8 +77,8 @@ const Work = () => {
             <motion.div
               key={index}
               variants={cardItem}
-              whileHover={{ scale: 1.03, y: -5 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.06, y: -8, rotate: 2 }}
+              whileTap={{ scale: 0.95, rotate: -2 }}
               className="group border border-gray-400 dark:border-gray-700 rounded-lg px-8 py-12 cursor-pointer
                 transition-all duration-300 ease-out hover:shadow-xl dark:hover:shadow-2xl
                 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
