@@ -23,20 +23,33 @@ const Header = () => {
         Express.js, and MongoDB to deliver complete end-to-end solutions.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        {/* Contact me button */}
         <Link
           href="#contact"
-          className="px-10 py-3 border-white rounded-full bg-black text-white flex items-center gap-2"
+          className=" px-10 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black flex items-center gap-2 shadow-md dark:shadow transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+    "
         >
           Contact me
-          <Image src={assets.right_arrow_white} alt="" className="w-4" />
+          <Image
+            src={assets.right_arrow_white}
+            alt=""
+            className="w-4 dark:invert"
+          />
         </Link>
 
+        {/* My resume button */}
         <Link
           href="/my-resume.pdf"
           download
-          className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2"
+          className=" px-10 py-3 rounded-full border border-gray-500 text-gray-800 dark:text-gray-200 flex items-center gap-2 transition-all duration-300 hover:border-black hover:text-black dark:hover:border-white dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+    "
         >
-          My resume <Image src={assets.download_icon} alt="" className="w-4" />
+          My resume
+          <Image
+            src={assets.download_icon}
+            alt=""
+            className="w-4 dark:invert"
+          />
         </Link>
       </div>
     </div>

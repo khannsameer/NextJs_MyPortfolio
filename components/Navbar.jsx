@@ -109,23 +109,29 @@ const Navbar = () => {
 
           <Link
             href="#contact"
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-ovo"
+            className=" hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-400 dark:border-gray-500
+    rounded-full ml-4 font-ovo text-gray-800 dark:text-gray-200 transition-all duration-300 hover:bg-gray-100 hover:text-black dark:hover:bg-gray-800 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+  "
           >
             Contact
             <Image
               src={assets.arrow_icon}
               priority={true}
-              className="w-3"
-              alt=""
+              className="w-3 dark:invert"
+              alt="arrow icon"
             />
           </Link>
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image
               src={assets.menu_black}
-              priority={true}
               alt=""
-              className="w-6 cursor-pointer"
+              className="w-6 cursor-pointer dark:hidden"
+            />
+            <Image
+              src={assets.menu_white}
+              alt=""
+              className="w-6 cursor-pointer hidden dark:block"
             />
           </button>
         </div>
@@ -139,9 +145,13 @@ const Navbar = () => {
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image
               src={assets.close_black}
-              priority={true}
-              alt=""
-              className="w-5 cursor-pointer"
+              alt="close"
+              className="w-5 cursor-pointer dark:hidden"
+            />
+            <Image
+              src={assets.close_white}
+              alt="close"
+              className="w-5 cursor-pointer hidden dark:block"
             />
           </div>
           <li>

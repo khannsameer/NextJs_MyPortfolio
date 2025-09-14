@@ -19,18 +19,29 @@ const Services = () => {
         {serviceData.map(({ icon, title, description, link }, index) => (
           <div
             key={index}
-            className="border border-gray-400 rounded-lg px-8 py-12 dark:border-gray-700 cursor-pointer transition duration-300 transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-800"
+            className=" group border border-gray-400 dark:border-gray-700 rounded-lg px-8 py-12 cursor-pointer
+    transition-all duration-300 ease-out transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+  "
           >
-            <Image src={icon} alt="" className="w-10" />
+            <div className="flex items-center justify-center w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-full mb-4">
+              <Image src={icon} alt="" className="w-10" />
+            </div>
+
             <h3 className="text-lg my-4 text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">
               {title}
             </h3>
+
             <p className="text-sm leading-5 text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white">
               {description}
             </p>
+
             <Link href={link} className="flex items-center gap-2 text-sm mt-5">
               Read more
-              <Image src={assets.right_arrow} alt="" className="w-4" />
+              <Image
+                src={assets.right_arrow}
+                alt=""
+                className="w-4 dark:invert"
+              />
             </Link>
           </div>
         ))}
