@@ -95,7 +95,7 @@ const Navbar = () => {
             <li key={i}>
               <Link
                 href={item.link}
-                className="font-ovo text-gray-800 dark:text-gray-100 hover:text-pink-500 transition-colors"
+                className="font-ovo text-gray-800 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 {item.name}
               </Link>
