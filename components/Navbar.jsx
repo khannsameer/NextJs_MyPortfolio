@@ -95,7 +95,9 @@ const Navbar = () => {
             <li key={i}>
               <Link
                 href={item.link}
-                className="font-ovo text-gray-800 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="inline-block font-ovo text-gray-800 dark:text-gray-100 
+                   hover:text-indigo-600 dark:hover:text-indigo-400 
+                   transition-transform duration-300 ease-in-out hover:scale-110"
               >
                 {item.name}
               </Link>
@@ -127,12 +129,12 @@ const Navbar = () => {
           >
             <Image
               src={assets.menu_black}
-              alt=""
+              alt="menu"
               className="w-6 cursor-pointer dark:hidden"
             />
             <Image
               src={assets.menu_white}
-              alt=""
+              alt="menu"
               className="w-6 cursor-pointer hidden dark:block"
             />
           </button>
@@ -174,7 +176,9 @@ const Navbar = () => {
               >
                 <Link
                   href={item.link}
-                  className="font-ovo text-gray-800 dark:text-gray-100 hover:text-pink-500 transition-colors text-lg"
+                  className="inline-block font-ovo text-gray-800 dark:text-gray-100 
+               hover:text-indigo-600 dark:hover:text-indigo-400 
+               transition-transform duration-300 ease-in-out hover:scale-110 text-lg"
                 >
                   {item.name}
                 </Link>
