@@ -34,7 +34,11 @@ const Navbar = () => {
     hidden: { x: "100%" },
     visible: {
       x: 0,
-      transition: { duration: 0.5, ease: "easeOut", staggerChildren: 0.1 },
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.8, 0.25, 1],
+        staggerChildren: 0.15,
+      },
     },
   };
 
