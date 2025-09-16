@@ -134,7 +134,7 @@ const Header = () => {
           whileTap={{ scale: 0.95, rotate: 2 }}
         >
           <Link
-            href="/my-resume.pdf"
+            href="/sameer_khan.pdf"
             download
             className="px-10 py-3 rounded-full border border-gray-500 text-gray-800 dark:text-gray-200 flex items-center gap-2 transition-all duration-300 hover:border-black hover:text-black dark:hover:border-white dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
           >
